@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To My Forever Bestie ❤️</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    #main-content { display: none; }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .share-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-pink-200 to-yellow-100 min-h-screen font-sans overflow-x-hidden">
+
+  <!-- Audio -->
+  <audio autoplay loop>
+    <source src="apni-yaari.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Welcome Section -->
+  <div id="name-input-section" class="min-h-screen flex flex-col justify-center items-center text-center px-6 fade-in">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 animate-bounce">Hey You! 👋</h1>
+    <p class="text-lg mt-4 text-gray-700 animate-pulse">Enter your name so we can make something magical...</p>
+    <input id="friend-name" type="text" placeholder="Your beautiful name here..." class="mt-6 px-4 py-2 border-2 border-pink-400 rounded-lg w-full max-w-md text-center focus:outline-none" />
+    <button onclick="startSite()" class="mt-4 bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg transition transform hover:scale-105">
+      Show My Surprise ✨
+    </button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="fade-in">
+
+    <!-- Hero Section -->
+    <section class="text-center py-10">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-pink-600 animate__animated animate__fadeInDown">🏆 To My Forever Bestie ❤️</h1>
+      <p class="mt-4 text-lg text-gray-700 max-w-xl mx-auto" id="personal-message"></p>
+      <img src="https://cdn-icons-png.flaticon.com/512/3468/3468379.png" class="w-40 mx-auto mt-6 animate-bounce" alt="Trophy">
+    </section>
+
+    <!-- Certificate -->
+    <section class="max-w-2xl mx-auto bg-white shadow-xl rounded-lg p-6 mt-10" id="certificate">
+      <h2 class="text-3xl font-bold text-purple-600 text-center">🎓 Certificate of Friendship</h2>
+      <p class="text-center text-lg mt-2">This certificate proudly honors</p>
+      <h3 id="cert-name" class="text-2xl text-pink-600 font-semibold text-center mt-4"></h3>
+      <p class="text-center mt-2 text-gray-600 italic">For being the most legendary best friend who brings joy, laughter, and unconditional love.</p>
+      <p class="text-center mt-2 text-gray-600 italic">You've been the sparkle in my dull days, the meme in my boredom, and the soul sister/brother in every storm.</p>
+      <p class="text-center mt-2 text-gray-600 italic">You’ve earned this not just by being kind, but by being YOU — real, raw, and radiant 💫</p>
+      <p class="text-center mt-2 text-gray-600 italic">Here’s to endless late-night talks, shared playlists, dumb jokes, and forever vibes 🫶</p>
+      <div class="mt-6 flex justify-between px-6 text-sm text-gray-700">
+        <p><strong>Issued On:</strong> May 21, 2025</p>
+        <p><strong>By:</strong> Lucky Joshi 💫</p>
+      </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section class="max-w-3xl mx-auto mt-12 px-6">
+      <h2 class="text-2xl font-bold text-center text-pink-700">💌 Why You're The Best</h2>
+      <ul class="mt-6 space-y-3 text-gray-800">
+        <li class="fade-in">💖 Always there no matter what.</li>
+        <li class="fade-in">😂 Laughs at all my silly jokes.</li>
+        <li class="fade-in">🌈 Brings sunshine to my cloudy days.</li>
+        <li class="fade-in">📱 Sends the best memes.</li>
+        <li class="fade-in">🫶 A forever friend through thick and thin.</li>
+        <li class="fade-in">🎉 Makes life a celebration every day.</li>
+        <li class="fade-in">🌟 Just being around you feels like home.</li>
+      </ul>
+    </section>
+
+    <!-- Final Message & Claim Button -->
+    <section class="text-center mt-16 px-4">
+      <h2 class="text-3xl text-pink-600 font-bold animate__animated animate__fadeIn">You're not just a friend — you're FAMILY 💞</h2>
+      <p class="mt-4 text-gray-700">This is your official recognition as the Bestest Bestfriend. Claim it with pride!</p>
+      <button onclick="claimAward()" class="mt-6 bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold text-lg transition transform hover:scale-105">
+        🎉 Claim Your Award
+      </button>
+    </section>
+
+    <!-- Share Section -->
+    <section class="text-center mt-12 mb-16 px-4">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Share Your Joy! 📱</h2>
+      <div class="flex justify-center gap-6">
+        <a id="whatsapp-share" class="share-btn bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg" target="_blank">
+          WhatsApp 💬
+        </a>
+        <a id="instagram-share" class="share-btn bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500 text-white px-4 py-2 rounded-lg" target="_blank">
+          Instagram 📸
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 pb-6 fade-in">
+      Made with 💗 by Lucky Joshi
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function startSite() {
+      const name = document.getElementById('friend-name').value.trim();
+      if (!name) {
+        alert("Please enter your name, bestie! 💖");
+        return;
+      }
+
+      document.getElementById('name-input-section').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('personal-message').innerText = `Hey ${name}! You are officially the bestest bestfriend ever. 💫`;
+      document.getElementById('cert-name').innerText = name;
+
+      // Setup share links
+      const encodedMsg = encodeURIComponent(`🎉 I’m so happy to call you my best friend, and you’ll always be my bestest bestu.❤️`);
+      document.getElementById('whatsapp-share').href = `https://wa.me/?text=${encodedMsg}`;
+      document.getElementById('instagram-share').href = `https://www.instagram.com/`;
+    }
+
+    function claimAward() {
+      confetti({
+        particleCount: 250,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+
+      const certificate = document.getElementById('certificate');
+      html2canvas(certificate).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'bestfriend-certificate.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>
+</body>
+</html>
