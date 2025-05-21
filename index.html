@@ -24,7 +24,7 @@
 <body class="bg-gradient-to-r from-pink-200 to-yellow-100 min-h-screen font-sans overflow-x-hidden">
 
   <!-- Audio -->
-  <audio autoplay loop>
+  <audio id="bg-audio" loop style="display:none;">
     <source src="apni-yaari.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -124,6 +124,12 @@
       const encodedMsg = encodeURIComponent(`🎉 I’m so happy to call you my best friend, and you’ll always be my bestest bestu.❤️`);
       document.getElementById('whatsapp-share').href = `https://wa.me/?text=${encodedMsg}`;
       document.getElementById('instagram-share').href = `https://www.instagram.com/`;
+
+      // Autoplay audio when user submits name
+      const audio = document.getElementById('bg-audio');
+      if (audio) {
+        audio.play().catch(() => {});
+      }
     }
 
     function claimAward() {
